@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <title>SVG</title>
+    <meta name="description" content="Обзор SVG: примеры и способы использования, преимущества и недостатки." />
+</head>
+
+<body>
+    <div class="grid container">
+        <header class="header grid__header">
+            <h1 class="header__title">SVG</h1>
+            <h2 class="header__title_small">Масштабируемая векторная графика</h2>
+        </header>
+        <main class="main grid__main">
+            <section class="section main__section main__section_horisontal">
+                <p class="section__text">
+                    Часто перед дизайнерами и верстальщиками встает вопрос: какой формат графики выбрать? Предлагаю
+                    разобраться с одним из форматов векторной графики - SVG.
+                </p>
+                <h2 class="section__title">Что такое SVG?</h2>
+                <p class="section__text">
+                    SVG (от англ. Scalable Vector Graphics — масштабируемая векторная графика) — язык разметки
+                    масштабируемой векторной графики, созданный Консорциумом Всемирной паутины (W3C) и входящий в
+                    подмножество расширяемого языка разметки XML, предназначен для описания двумерной векторной и
+                    смешанной векторно/растровой графики в формате XML. Поддерживает как неподвижную, так и
+                    анимированную интерактивную графику — или, в иных терминах, декларативную и скриптовую. Не
+                    поддерживает описания трёхмерных объектов.
+                    Спецификацию можно посмотреть <a href="https://www.w3.org/TR/SVG2/" class="link" target="_blank">на
+                        сайте W3C</a>.
+                </p>
+            </section>
+            <section class="section main__section ">
+                <h2 class="section__title">Где использовать SVG?</h2>
+                <p class="section__text">
+                    Обычно .svg используют в дизайне иконок, логотипов и элементов пользовательского интерфейса для
+                    веб-сайтов. Но область применения этого формата намного больше. С его помощью можно создавать
+                    графики и диаграммы, простую инфографику, масштабируемые дорожные карты, легкие игры вроде судоку
+                    или кроссвордов.
+                    Полученные элементы будут без потерь растягивается и сжимается в зависимости от размера экрана,
+                    иметь малый вес и отлично смотреться на устройствах с высокой плотностью пикселей
+                </p>
+            </section>
+            <figure class=" section__figure flex">
+                <img class="section__img" src="img/icon.svg" alt="Иконка, пример использования SVG" width="89"
+                    height="100">
+                <img class="section__img" src="img/logo.svg" alt="Логотип, пример использования SVG" width="100"
+                    height="100">
+                <img class="section__img" src="img/pinguin.svg" alt="Картинка, пример использования SVG" width="104"
+                    height="100">
+                <figcaption class="section__description">Примеры использования SVG</figcaption>
+            </figure>
+
+            <section class="section main__section">
+                <h2 class="section__title">Преимущества и недостатки SVG</h2>
+                <h3 class="section__title_small">Преимущества:</h3>
+                <ul class="section__list list list_green-style">
+                    <li class="list__item">SVG бесконечно масштабируем и отзывчив</li>
+                    <li class="list__item">имеет очень маленький размер файла</li>
+                    <li class="list__item">может быть
+                        стилизован, анимирован и оживлён при помощи известных веб-технологий — CSS и JavaScript.</li>
+                    <li class="list__item">файлы SVG можно читать и редактировать при
+                        помощи обычных текстовых редакторов</li>
+                </ul>
+            </section>
+
+            <figure class=" section__figure flex">
+                <img class="section__img" src="img/cat-svg.svg" alt="Картинка в формате SVG при увеличении" width="239"
+                    height="189">
+                <img class="section__img" src="img/cat-png.svg" alt="Картинка в формате PNG при увеличении" width="242"
+                    height="189">
+                <figcaption class="section__description">Сравнение картинок в формате SVG и формате PNG при 4-х
+                    кратном увеличении</figcaption>
+            </figure>
+
+            <section class="section main__section main__section_horisontal">
+                <h3 class="section__title_small">Недостатки:</h3>
+                <ul class="section__list list list_red-style">
+                    <li class="list__item">не поддерживается очень старыми браузерами, например, Explorer 8 и ниже.</li>
+                    <li class="list__item">SVG не можно применять в фотографиях, потому что это векторный формат, и он
+                        создан для разных фигур,
+                        линий и тп.</li>
+                    <li class="list__item">есть также трудности в использовании SVG в картографических приложениях, так
+                        как для правильного
+                        отображения маленькой части изображения, документ необходимо прочитать целиком.</li>
+                </ul>
+            </section>
+
+            <section class="section main__section main__section_horisontal">
+                <h2 class="section__title">Способы подключения SVG к html-странице:</h2>
+                <ol class="section__list list list-num">
+                    <li class="list-num__item"><b>Через тег &lt;img&gt;.</b> Минус этого способа в том, что
+                        взаимодействовать с внутренними элементами SVG не получится.
+                        Такой вариант подключения используется для контентных svg-изображений, которые менять внешне не
+                        требуется (вроде графиков, схем и логотипов).
+                        <div class="code">
+                            &lt;img src="img/icon.svg" alt="Иконка"&gt;
+                        </div>
+                    </li>
+                    <li class="list-num__item"><b>Через css-свойство background.</b> Минусы - аналогично с предыдущим
+                        способом.
+                        <div class="code">
+                            .icon {<br>
+                            background-image: url("../img/icon.svg");<br>
+                            }
+                        </div>
+                    </li>
+                    <li class="list-num__item"><b>Вставка svg-кода напрямую.</b> Вставлять svg-код прямо в html-файл —
+                        это
+                        третий способ. И для нас самый интересный. Он позволяет не просто отображать готовую графику, но
+                        и менять её (толщину элементов, заливку, обводку и так далее). Напрямую на html-страницу (в теге
+                        &lt;svg&gt;) вставляют как контентные, так и декоративные изображения, а минус тут в том, что
+                        такие
+                        картинки не кешируются отдельно от с
+                        траницы.
+                        <div class="code">
+                            &lt;svg&gt;<br>
+                            &lt;rect x="10" y="10" width="100" height="100" /&gt;<br>
+                            &lt;/svg&gt;<br>
+                        </div>
+                    </li>
+                </ol>
+
+            </section>
+            <button class="btn-up visually-hidden" type="button" aria-label="Наверх">
+            </button>
+        </main>
+        <footer class="footer grid__footer">
+            <div class="footer-content">
+                <h2 class="footer__title">Источники:</h2>
+                <ul class="footer__list list">
+                    <li class="list__item"><a class="link link_light"
+                            href="https://developer.mozilla.org/ru/docs/Web/SVG">MDN</a></li>
+                    <li class="list__item"><a class="link link_light"
+                            href="https://skillbox.ru/media/base/kak_verstalshchiku_rabotat_s_svg/">Skillbox</a></li>
+                    <li class="list__item"><a class="link link_light"
+                            href="https://htmlacademy.ru/blog/boost/tutorial/a-guide-to-svg-on-web">HTML academy</a>
+                    </li>
+                    <li class="list__item"><a class="link link_light"
+                            href=" https://hyperhost.ua/info/ru/svg-format-plyusyi-i-minusyi-ispolzovaniya">Hyper
+                            Host</a></li>
+                </ul>
+
+                <p class="footer-content__item">Санкт-Петербург, 2022г.</p>
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
